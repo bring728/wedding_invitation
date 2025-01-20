@@ -1,7 +1,7 @@
 export const WEDDING_INVITATION_URL = "https://bring728.github.io/wedding_invitation/";
 // export const WEDDING_INVITATION_URL = "http://localhost:8000/";
 
-export const KAKAOTALK_API_TOKEN = "JavaScript 키 입력";
+export const KAKAOTALK_API_TOKEN = "f8574a87c3d49fdec9dbc3f0a4d33ecb";
 export const KAKAOTALK_SHARE_IMAGE =
   "https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg";
 
