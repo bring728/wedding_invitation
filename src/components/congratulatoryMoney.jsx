@@ -1,3 +1,77 @@
+import React, { useState } from "react";
+import { Button, Divider, message, Modal } from "antd";
+import { CheckCircleTwoTone, PhoneTwoTone } from "@ant-design/icons";
+import styled from "styled-components";
+import CopyToClipboard from "react-copy-to-clipboard";
+import Flower from "../assets/flower3.png";
+import {
+  GROOM_NAME,
+  GROOM_ACCOUNT_NUMBER,
+  GROOM_PHONE_NUMBER,  // 추가
+  BRIDE_NAME,
+  BRIDE_ACCOUNT_NUMBER,
+  BRIDE_PHONE_NUMBER,  // 추가
+} from "../../config";
+
+const Wrapper = styled.div`
+  padding-top: 42px;
+  padding-bottom: 18px;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const Title = styled.p`
+  font-size: 1rem;
+  color: var(--title-color);
+  font-weight: bold;
+  opacity: 0.85;
+  margin-bottom: 0;
+`;
+
+const Content = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.75;
+  opacity: 0.75;
+  margin-bottom: 42px;
+`;
+
+const SubContent = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.75;
+  opacity: 0.75;
+  margin-bottom: 42px;
+`;
+
+const Description = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.75;
+  opacity: 0.65;
+  margin-top: 8px;
+`;
+
+const ButtonWrap = styled.div`
+  margin-bottom: 3.125rem;
+  display: flex;
+  flex-wrap: wrap;  /* 버튼 줄바꿈 가능 */
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+`;
+
+const ContactButton = styled.div`
+  width: 10.75rem;
+  border: 1px solid #efddde;
+  padding: 2.188rem 0;
+`;
+
+const Image = styled.img`
+  display: block;
+  margin: 0 auto;
+  width: 1.375rem;
+  padding-bottom: 42px;
+`;
+
 const CongratulatoryMoney = () => {
   const [groomVisible, setGroomVisible] = useState(false);
   const [brideVisible, setBrideVisible] = useState(false);
