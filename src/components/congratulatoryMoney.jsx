@@ -187,7 +187,7 @@ const CongratulatoryMoney = () => {
         <div>
           <b>신랑 {GROOM_NAME}</b>
           <Divider type="vertical" />
-          <CopyToClipboard text={"010-1234-5678"}>
+          <CopyToClipboard text={"010-4129-0738"}>
             <Button
               type="text"
               style={{ padding: 0, margin: 0 }}
@@ -210,7 +210,7 @@ const CongratulatoryMoney = () => {
         <div>
           <b>신부 {BRIDE_NAME}</b>
           <Divider type="vertical" />
-          <CopyToClipboard text={"010-9876-5432"}>
+          <CopyToClipboard text={"010-9965-9818"}>
             <Button
               type="text"
               style={{ padding: 0, margin: 0 }}
