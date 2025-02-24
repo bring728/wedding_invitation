@@ -1,5 +1,5 @@
 // export const WEDDING_INVITATION_URL = "https://bring728.github.io/wedding_invitation/";
-export const WEDDING_INVITATION_URL = "http://localhost:8000/";
+export const WEDDING_INVITATION_URL = "https://jyes-wedding.netlify.app/";
 
 export const KAKAOTALK_API_TOKEN = "f8574a87c3d49fdec9dbc3f0a4d33ecb";
 
