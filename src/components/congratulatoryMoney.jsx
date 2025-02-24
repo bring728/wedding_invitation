@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import { Button, Divider, message, Modal } from "antd";
-import { CheckCircleTwoTone } from "@ant-design/icons";
+import { CheckCircleTwoTone, PhoneTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Flower from "../assets/flower3.png";
 import {
   GROOM_NAME,
   GROOM_ACCOUNT_NUMBER,
-  GROOM_FATHER_NAME,
-  GROOM_FATHER_ACCOUNT_NUMBER,
-  GROOM_MOTHER_NAME,
-  GROOM_MOTHER_ACCOUNT_NUMBER,
+  GROOM_PHONE_NUMBER,  // 추가
   BRIDE_NAME,
   BRIDE_ACCOUNT_NUMBER,
-  BRIDE_FATHER_NAME,
-  BRIDE_FATHER_ACCOUNT_NUMBER,
-  BRIDE_MOTHER_NAME,
-  BRIDE_MOTHER_ACCOUNT_NUMBER,
+  BRIDE_PHONE_NUMBER,  // 추가
 } from "../../config";
 
 const Wrapper = styled.div`
@@ -59,10 +53,12 @@ const Description = styled.p`
 const ButtonWrap = styled.div`
   margin-bottom: 3.125rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;  /* 버튼 줄바꿈 가능 */
+  gap: 10px;
   justify-content: center;
   text-align: center;
 `;
+
 const ContactButton = styled.div`
   width: 10.75rem;
   border: 1px solid #efddde;
@@ -79,83 +75,63 @@ const Image = styled.img`
 const CongratulatoryMoney = () => {
   const [groomVisible, setGroomVisible] = useState(false);
   const [brideVisible, setBrideVisible] = useState(false);
+  const [groomPhoneVisible, setGroomPhoneVisible] = useState(false);
+  const [bridePhoneVisible, setBridePhoneVisible] = useState(false);
 
   return (
     <Wrapper>
-      <Divider
-        data-aos="fade-up"
-        plain
-        style={{ marginTop: 0, marginBottom: 32 }}
-      >
+      <Divider data-aos="fade-up" plain style={{ marginTop: 0, marginBottom: 32 }}>
         <Title>축하의 마음을 전하세요</Title>
       </Divider>
       <Image src={Flower} />
-      <Content data-aos="fade-up">
-        축하의 마음을 담아 축의금을 전달해 보세요.
-      </Content>
+      <Content data-aos="fade-up">축하의 마음을 담아 축의금을 전달해 보세요.</Content>
 
       <ButtonWrap>
+        {/* 신랑측 계좌번호 */}
         <ContactButton data-aos="fade-up" onClick={() => setGroomVisible(true)}>
-          <CheckCircleTwoTone
-            style={{ fontSize: 64, marginBottom: 16 }}
-            twoToneColor="#829fe0"
-          />
+          <CheckCircleTwoTone style={{ fontSize: 64, marginBottom: 16 }} twoToneColor="#829fe0" />
           <br />
           <SubContent>신랑측 계좌번호 확인</SubContent>
         </ContactButton>
+
+        {/* 신부측 계좌번호 */}
         <ContactButton data-aos="fade-up" onClick={() => setBrideVisible(true)}>
-          <CheckCircleTwoTone
-            style={{ fontSize: 64, marginBottom: 16 }}
-            twoToneColor="#fe7daf"
-          />
+          <CheckCircleTwoTone style={{ fontSize: 64, marginBottom: 16 }} twoToneColor="#fe7daf" />
           <br />
           <SubContent>신부측 계좌번호 확인</SubContent>
         </ContactButton>
+
+        {/* 신랑 연락처 */}
+        <ContactButton data-aos="fade-up" onClick={() => setGroomPhoneVisible(true)}>
+          <PhoneTwoTone style={{ fontSize: 64, marginBottom: 16 }} twoToneColor="#829fe0" />
+          <br />
+          <SubContent>신랑 연락처 확인</SubContent>
+        </ContactButton>
+
+        {/* 신부 연락처 */}
+        <ContactButton data-aos="fade-up" onClick={() => setBridePhoneVisible(true)}>
+          <PhoneTwoTone style={{ fontSize: 64, marginBottom: 16 }} twoToneColor="#fe7daf" />
+          <br />
+          <SubContent>신부 연락처 확인</SubContent>
+        </ContactButton>
       </ButtonWrap>
+
+      {/* 신랑측 계좌번호 Modal */}
       <Modal
         title={<b>신랑측 계좌번호</b>}
-        visible={groomVisible}
+        open={groomVisible}
         onOk={() => setGroomVisible(false)}
         onCancel={() => setGroomVisible(false)}
         footer={[
-          <Description>
-            계좌번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
-          </Description>,
+          <Description>계좌번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.</Description>,
         ]}
       >
-        {/* <div>
-          <b>부 : {GROOM_FATHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={GROOM_FATHER_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {GROOM_FATHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
-        </div>
-        <div style={{ marginTop: 24, marginBottom: 24 }}>
-          <b>모 : {GROOM_MOTHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={GROOM_MOTHER_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {GROOM_MOTHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
-        </div> */}
         <div>
           <b>신랑 {GROOM_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={GROOM_ACCOUNT_NUMBER}>
             <Button
               type="text"
-              style={{ padding: 0, margin: 0 }}
               onClick={() => message.success("계좌번호가 복사되었습니다.")}
             >
               {GROOM_ACCOUNT_NUMBER}
@@ -163,53 +139,74 @@ const CongratulatoryMoney = () => {
           </CopyToClipboard>
         </div>
       </Modal>
+
+      {/* 신부측 계좌번호 Modal */}
       <Modal
         title={<b>신부측 계좌번호</b>}
-        visible={brideVisible}
+        open={brideVisible}
         onOk={() => setBrideVisible(false)}
         onCancel={() => setBrideVisible(false)}
         footer={[
-          <Description>
-            계좌번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
-          </Description>,
+          <Description>계좌번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.</Description>,
         ]}
       >
-        {/* <div>
-          <b>부 : {BRIDE_FATHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={BRIDE_FATHER_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {BRIDE_FATHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
-        </div>
-        <div style={{ marginTop: 24, marginBottom: 24 }}>
-          <b>모 :{BRIDE_MOTHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={BRIDE_MOTHER_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {BRIDE_MOTHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
-        </div> */}
         <div>
           <b>신부 {BRIDE_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={BRIDE_ACCOUNT_NUMBER}>
             <Button
               type="text"
-              style={{ padding: 0, margin: 0 }}
               onClick={() => message.success("계좌번호가 복사되었습니다.")}
             >
               {BRIDE_ACCOUNT_NUMBER}
+            </Button>
+          </CopyToClipboard>
+        </div>
+      </Modal>
+
+      {/* 신랑 연락처 Modal */}
+      <Modal
+        title={<b>신랑 연락처</b>}
+        open={groomPhoneVisible}
+        onOk={() => setGroomPhoneVisible(false)}
+        onCancel={() => setGroomPhoneVisible(false)}
+        footer={[
+          <Description>전화번호 클릭시 복사됩니다.</Description>,
+        ]}
+      >
+        <div>
+          <b>신랑 {GROOM_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={GROOM_PHONE_NUMBER}>
+            <Button
+              type="text"
+              onClick={() => message.success("전화번호가 복사되었습니다.")}
+            >
+              {GROOM_PHONE_NUMBER}
+            </Button>
+          </CopyToClipboard>
+        </div>
+      </Modal>
+
+      {/* 신부 연락처 Modal */}
+      <Modal
+        title={<b>신부 연락처</b>}
+        open={bridePhoneVisible}
+        onOk={() => setBridePhoneVisible(false)}
+        onCancel={() => setBridePhoneVisible(false)}
+        footer={[
+          <Description>전화번호 클릭시 복사됩니다.</Description>,
+        ]}
+      >
+        <div>
+          <b>신부 {BRIDE_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={BRIDE_PHONE_NUMBER}>
+            <Button
+              type="text"
+              onClick={() => message.success("전화번호가 복사되었습니다.")}
+            >
+              {BRIDE_PHONE_NUMBER}
             </Button>
           </CopyToClipboard>
         </div>
