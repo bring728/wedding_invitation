@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { Button, Divider, message, Modal } from "antd";
 import { CheckCircleTwoTone, PhoneTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
+
+const RowWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* 버튼 간격 조정 */
+  margin-bottom: 16px;
+`;
+
 import CopyToClipboard from "react-copy-to-clipboard";
 import Flower from "../assets/flower3.png";
 import {
