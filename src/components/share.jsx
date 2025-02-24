@@ -12,7 +12,7 @@ import {
   BRIDE_NAME,
 } from "../../config";
 
-const IMAGE_URL = `${window.location.origin}/img1.jpg`;
+const IMAGE_URL = typeof window !== "undefined" ? window.GLOBAL_IMAGE_URL : "";
 
 const Wrapper = styled.div`
   padding-top: 42px;
