@@ -3,8 +3,8 @@ export const WEDDING_INVITATION_URL = "http://localhost:8000/";
 
 export const KAKAOTALK_API_TOKEN = "f8574a87c3d49fdec9dbc3f0a4d33ecb";
 
-export const KAKAOTALK_SHARE_IMAGE =
-  "https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg";
+export const KAKAOTALK_SHARE_IMAGE = "https://raw.githubusercontent.com/bring728/wedding_invitation/main/src/assets/img1.jpg"
+  // "https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg";
 
   
 export const WEDDING_DATE = "2025년 04월 26일, 토요일 오후 1시";
