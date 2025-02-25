@@ -165,7 +165,7 @@ const CongratulatoryMoney = () => {
         </RowWrap>
       </ButtonWrap>
 
-      {/* 신랑 계좌번호 모달 */}
+      {/* 신랑 계좌번호 모달 (신랑, 부, 모 순서) */}
       <Modal
         title={<b>신랑측 계좌번호</b>}
         visible={groomVisible}
@@ -186,7 +186,7 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-        <div>
+        <div style={{ marginTop: 24, marginBottom: 24 }}>
           <b>부 : {GROOM_FATHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={GROOM_FATHER_ACCOUNT_NUMBER}>
@@ -199,7 +199,7 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-        <div style={{ marginTop: 24, marginBottom: 24 }}>
+        <div>
           <b>모 : {GROOM_MOTHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={GROOM_MOTHER_ACCOUNT_NUMBER}>
@@ -214,7 +214,7 @@ const CongratulatoryMoney = () => {
         </div>
       </Modal>
 
-      {/* 신부 계좌번호 모달 */}
+      {/* 신부 계좌번호 모달 (신부, 부, 모 순서) */}
       <Modal
         title={<b>신부측 계좌번호</b>}
         visible={brideVisible}
@@ -235,7 +235,7 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-        <div>
+        <div style={{ marginTop: 24, marginBottom: 24 }}>
           <b>부 : {BRIDE_FATHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={BRIDE_FATHER_ACCOUNT_NUMBER}>
@@ -248,7 +248,7 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-        <div style={{ marginTop: 24, marginBottom: 24 }}>
+        <div>
           <b>모 : {BRIDE_MOTHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={BRIDE_MOTHER_ACCOUNT_NUMBER}>
