@@ -174,6 +174,19 @@ const CongratulatoryMoney = () => {
         footer={[<Description>계좌번호 클릭 시 복사됩니다.</Description>]}
       >
         <div>
+          <b>신랑 {GROOM_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={GROOM_ACCOUNT_NUMBER}>
+            <Button
+              type="text"
+              style={{ padding: 0, margin: 0 }}
+              onClick={() => message.success("계좌번호가 복사되었습니다.")}
+            >
+              {GROOM_ACCOUNT_NUMBER}
+            </Button>
+          </CopyToClipboard>
+        </div>
+        <div>
           <b>부 : {GROOM_FATHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={GROOM_FATHER_ACCOUNT_NUMBER}>
@@ -199,19 +212,6 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-        <div>
-          <b>신랑 {GROOM_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={GROOM_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {GROOM_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
-        </div>
       </Modal>
 
       {/* 신부 계좌번호 모달 */}
@@ -222,6 +222,19 @@ const CongratulatoryMoney = () => {
         onCancel={() => setBrideVisible(false)}
         footer={[<Description>계좌번호 클릭 시 복사됩니다.</Description>]}
       >
+        <div>
+          <b>신부 {BRIDE_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={BRIDE_ACCOUNT_NUMBER}>
+            <Button
+              type="text"
+              style={{ padding: 0, margin: 0 }}
+              onClick={() => message.success("계좌번호가 복사되었습니다.")}
+            >
+              {BRIDE_ACCOUNT_NUMBER}
+            </Button>
+          </CopyToClipboard>
+        </div>
         <div>
           <b>부 : {BRIDE_FATHER_NAME}</b>
           <Divider type="vertical" />
@@ -245,19 +258,6 @@ const CongratulatoryMoney = () => {
               onClick={() => message.success("계좌번호가 복사되었습니다.")}
             >
               {BRIDE_MOTHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
-        </div>
-        <div>
-          <b>신부 {BRIDE_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={BRIDE_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {BRIDE_ACCOUNT_NUMBER}
             </Button>
           </CopyToClipboard>
         </div>
