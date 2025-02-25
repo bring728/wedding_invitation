@@ -96,10 +96,6 @@ const CongratulatoryMoney = () => {
   const [brideVisible, setBrideVisible] = useState(false);
   const [groomPhoneVisible, setGroomPhoneVisible] = useState(false);
   const [bridePhoneVisible, setBridePhoneVisible] = useState(false);
-  const [groomFatherPhoneVisible, setGroomFatherPhoneVisible] = useState(false);
-  const [groomMotherPhoneVisible, setGroomMotherPhoneVisible] = useState(false);
-  const [brideFatherPhoneVisible, setBrideFatherPhoneVisible] = useState(false);
-  const [brideMotherPhoneVisible, setBrideMotherPhoneVisible] = useState(false);
 
   return (
     <Wrapper>
@@ -142,7 +138,7 @@ const CongratulatoryMoney = () => {
           </ContactButton>
         </RowWrap>
 
-        {/* 연락처 버튼 */}
+        {/* 연락처 버튼 (통합) */}
         <RowWrap>
           <ContactButton
             data-aos="fade-up"
@@ -153,32 +149,8 @@ const CongratulatoryMoney = () => {
               twoToneColor="#829fe0"
             />
             <br />
-            <SubContent>신랑 연락처</SubContent>
+            <SubContent>신랑측 연락처</SubContent>
           </ContactButton>
-          <ContactButton
-            data-aos="fade-up"
-            onClick={() => setGroomFatherPhoneVisible(true)}
-          >
-            <PhoneTwoTone
-              style={{ fontSize: 64, marginBottom: 16 }}
-              twoToneColor="#829fe0"
-            />
-            <br />
-            <SubContent>신랑 아버지 연락처</SubContent>
-          </ContactButton>
-          <ContactButton
-            data-aos="fade-up"
-            onClick={() => setGroomMotherPhoneVisible(true)}
-          >
-            <PhoneTwoTone
-              style={{ fontSize: 64, marginBottom: 16 }}
-              twoToneColor="#829fe0"
-            />
-            <br />
-            <SubContent>신랑 어머니 연락처</SubContent>
-          </ContactButton>
-        </RowWrap>
-        <RowWrap>
           <ContactButton
             data-aos="fade-up"
             onClick={() => setBridePhoneVisible(true)}
@@ -188,29 +160,7 @@ const CongratulatoryMoney = () => {
               twoToneColor="#fe7daf"
             />
             <br />
-            <SubContent>신부 연락처</SubContent>
-          </ContactButton>
-          <ContactButton
-            data-aos="fade-up"
-            onClick={() => setBrideFatherPhoneVisible(true)}
-          >
-            <PhoneTwoTone
-              style={{ fontSize: 64, marginBottom: 16 }}
-              twoToneColor="#fe7daf"
-            />
-            <br />
-            <SubContent>신부 아버지 연락처</SubContent>
-          </ContactButton>
-          <ContactButton
-            data-aos="fade-up"
-            onClick={() => setBrideMotherPhoneVisible(true)}
-          >
-            <PhoneTwoTone
-              style={{ fontSize: 64, marginBottom: 16 }}
-              twoToneColor="#fe7daf"
-            />
-            <br />
-            <SubContent>신부 어머니 연락처</SubContent>
+            <SubContent>신부측 연락처</SubContent>
           </ContactButton>
         </RowWrap>
       </ButtonWrap>
@@ -313,9 +263,9 @@ const CongratulatoryMoney = () => {
         </div>
       </Modal>
 
-      {/* 신랑 연락처 모달 */}
+      {/* 신랑 연락처 모달 (통합) */}
       <Modal
-        title={<b>신랑 연락처</b>}
+        title={<b>신랑측 연락처</b>}
         visible={groomPhoneVisible}
         onOk={() => setGroomPhoneVisible(false)}
         onCancel={() => setGroomPhoneVisible(false)}
@@ -334,17 +284,7 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-      </Modal>
-
-      {/* 신랑 아버지 연락처 모달 */}
-      <Modal
-        title={<b>신랑 아버지 연락처</b>}
-        visible={groomFatherPhoneVisible}
-        onOk={() => setGroomFatherPhoneVisible(false)}
-        onCancel={() => setGroomFatherPhoneVisible(false)}
-        footer={[<Description>전화번호 클릭 시 복사됩니다.</Description>]}
-      >
-        <div>
+        <div style={{ marginTop: 24, marginBottom: 24 }}>
           <b>부 : {GROOM_FATHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={GROOM_FATHER_PHONE}>
@@ -357,16 +297,6 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-      </Modal>
-
-      {/* 신랑 어머니 연락처 모달 */}
-      <Modal
-        title={<b>신랑 어머니 연락처</b>}
-        visible={groomMotherPhoneVisible}
-        onOk={() => setGroomMotherPhoneVisible(false)}
-        onCancel={() => setGroomMotherPhoneVisible(false)}
-        footer={[<Description>전화번호 클릭 시 복사됩니다.</Description>]}
-      >
         <div>
           <b>모 : {GROOM_MOTHER_NAME}</b>
           <Divider type="vertical" />
@@ -382,9 +312,9 @@ const CongratulatoryMoney = () => {
         </div>
       </Modal>
 
-      {/* 신부 연락처 모달 */}
+      {/* 신부 연락처 모달 (통합) */}
       <Modal
-        title={<b>신부 연락처</b>}
+        title={<b>신부측 연락처</b>}
         visible={bridePhoneVisible}
         onOk={() => setBridePhoneVisible(false)}
         onCancel={() => setBridePhoneVisible(false)}
@@ -403,17 +333,7 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-      </Modal>
-
-      {/* 신부 아버지 연락처 모달 */}
-      <Modal
-        title={<b>신부 아버지 연락처</b>}
-        visible={brideFatherPhoneVisible}
-        onOk={() => setBrideFatherPhoneVisible(false)}
-        onCancel={() => setBrideFatherPhoneVisible(false)}
-        footer={[<Description>전화번호 클릭 시 복사됩니다.</Description>]}
-      >
-        <div>
+        <div style={{ marginTop: 24, marginBottom: 24 }}>
           <b>부 : {BRIDE_FATHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={BRIDE_FATHER_PHONE}>
@@ -426,16 +346,6 @@ const CongratulatoryMoney = () => {
             </Button>
           </CopyToClipboard>
         </div>
-      </Modal>
-
-      {/* 신부 어머니 연락처 모달 */}
-      <Modal
-        title={<b>신부 어머니 연락처</b>}
-        visible={brideMotherPhoneVisible}
-        onOk={() => setBrideMotherPhoneVisible(false)}
-        onCancel={() => setBrideMotherPhoneVisible(false)}
-        footer={[<Description>전화번호 클릭 시 복사됩니다.</Description>]}
-      >
         <div>
           <b>모 : {BRIDE_MOTHER_NAME}</b>
           <Divider type="vertical" />
