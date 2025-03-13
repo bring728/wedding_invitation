@@ -8,7 +8,7 @@ export const KAKAOTALK_SHARE_IMAGE = "https://raw.githubusercontent.com/bring728
 
   
 export const WEDDING_DATE = "2025년 04월 26일, 토요일 오후 1시";
-export const WEDDING_LOCATION = "평와희공원 소풍결혼식장";
+export const WEDDING_LOCATION = "평화의공원 소풍결혼식장";
 
 export const GROOM_NAME = "최준용";
 export const GROOM_ACCOUNT_NUMBER = "우리은행 1002-459-146669";
