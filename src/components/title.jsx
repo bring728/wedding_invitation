@@ -6,7 +6,7 @@ import {
   GROOM_NAME,
   BRIDE_NAME,
 } from "../../config.js";
-import BackgroundVideo from "../assets/BackgroundVideo.mp4";
+import mainImg from "../assets/img5.jpg"; // 이미지 임포트
 import GroovePaper from "../assets/GroovePaper.png";
 
 const Layout = styled.div`
@@ -27,19 +27,19 @@ const TitleWrapper = styled.div`
   -o-animation: fadein 3s; /* Opera */
 `;
 
-const VideoBackground = styled.video`
+const ImageBackground = styled.img`
   width: 100%;
+  height: auto;
+  object-fit: cover; /* 이미지가 컨테이너를 채우도록 설정 */
 `;
 
 const WeddingInvitation = styled.p`
-  // font-size: 0.825rem;
   font-size: 1.1rem;
   opacity: 0.45;
   margin-bottom: 16px;
 `;
 
 const GroomBride = styled.p`
-  // font-size: 1.5rem;
   font-size: 1.7rem;
   font-weight: bold;
   opacity: 0.9;
@@ -47,18 +47,18 @@ const GroomBride = styled.p`
 `;
 
 const Schedule = styled.p`
-  // font-size: 1.06rem;
   font-size: 1.25rem;
   opacity: 0.65;
   margin-bottom: 24px;
 `;
+
 const Title = () => {
   return (
     <Layout>
       <TitleWrapper>
         <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
         <GroomBride>
-          {GROOM_NAME} &#38; {BRIDE_NAME}
+          {GROOM_NAME} & {BRIDE_NAME}
         </GroomBride>
         <Schedule>
           {WEDDING_DATE}
@@ -66,9 +66,7 @@ const Title = () => {
           {WEDDING_LOCATION}
         </Schedule>
       </TitleWrapper>
-      <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src={BackgroundVideo} type="video/mp4" />
-      </VideoBackground>
+      <ImageBackground src={mainImg} alt="Wedding Background" />
     </Layout>
   );
 };

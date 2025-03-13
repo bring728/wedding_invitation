@@ -42,7 +42,7 @@ const Wrapper = styled.div`
 
 const Title = styled.p`
   // font-size: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
@@ -51,7 +51,7 @@ const Title = styled.p`
 
 const Content = styled.p`
   // font-size: 0.875rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 42px;
@@ -59,7 +59,7 @@ const Content = styled.p`
 
 const SubContent = styled.p`
     // font-size: 0.875rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 42px;
@@ -67,7 +67,7 @@ const SubContent = styled.p`
 
 const Description = styled.p`
     // font-size: 0.875rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.75;
   opacity: 0.65;
   margin-top: 8px;
