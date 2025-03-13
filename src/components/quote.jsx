@@ -16,7 +16,8 @@ const Wrapper = styled.div`
 const Content = styled.span`
   display: block;
   margin: 0 auto;
-  font-size: 1.3rem;
+  // font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: "mom_to_daughter";
   text-align: center;
   color: var(--title-color);

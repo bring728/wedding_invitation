@@ -24,7 +24,7 @@ import {
   BRIDE_FATHER_PHONE,
   BRIDE_MOTHER_PHONE,
 } from "../../config";
-
+``
 const RowWrap = styled.div`
   display: flex;
   justify-content: center;
@@ -41,7 +41,8 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 1rem;
+  // font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
@@ -49,21 +50,24 @@ const Title = styled.p`
 `;
 
 const Content = styled.p`
-  font-size: 0.875rem;
+  // font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 42px;
 `;
 
 const SubContent = styled.p`
-  font-size: 0.875rem;
+    // font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 42px;
 `;
 
 const Description = styled.p`
-  font-size: 0.875rem;
+    // font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.75;
   opacity: 0.65;
   margin-top: 8px;

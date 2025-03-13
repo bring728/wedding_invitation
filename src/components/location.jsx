@@ -10,7 +10,8 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.span`
-  font-size: 1rem;
+  // font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
@@ -25,7 +26,8 @@ const Image = styled.img`
 `;
 
 const Content = styled.p`
-  font-size: 0.875rem;
+  // font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.75;
   opacity: 0.75;
   width: 100%;

@@ -21,7 +21,8 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.span`
-  font-size: 1rem;
+  // font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
