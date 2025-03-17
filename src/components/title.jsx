@@ -6,7 +6,7 @@ import {
   GROOM_NAME,
   BRIDE_NAME,
 } from "../../config.js";
-import mainImg from "../assets/img5.jpg"; // 이미지 임포트
+import mainImg from "../assets/img8.jpg"; // 이미지 임포트
 import GroovePaper from "../assets/GroovePaper.png";
 
 const Layout = styled.div`
