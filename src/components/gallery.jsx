@@ -58,10 +58,6 @@ const images = [
     thumbnail: GalleryPhoto6,
   },
   {
-    original: GalleryPhoto6,
-    thumbnail: GalleryPhoto6,
-  },
-  {
     original: GalleryPhoto7,
     thumbnail: GalleryPhoto7,
   },
