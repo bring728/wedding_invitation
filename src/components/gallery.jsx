@@ -8,6 +8,13 @@ import GalleryPhoto2 from "../assets/img2.jpg";
 import GalleryPhoto3 from "../assets/img3.jpg";
 import GalleryPhoto4 from "../assets/img4.jpg";
 import GalleryPhoto5 from "../assets/img5.jpg";
+import GalleryPhoto6 from "../assets/img6.jpg";
+import GalleryPhoto7 from "../assets/img7.jpg";
+import GalleryPhoto8 from "../assets/img8.jpg";
+import GalleryPhoto9 from "../assets/img9.jpg";
+import GalleryPhoto10 from "../assets/img10.jpg";
+import GalleryPhoto11 from "../assets/img11.jpg";
+import GalleryPhoto12 from "../assets/img12.jpg";
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -46,10 +53,38 @@ const images = [
     original: GalleryPhoto5,
     thumbnail: GalleryPhoto5,
   },
-  // {
-  //   original: GalleryPhoto6,
-  //   thumbnail: GalleryPhoto6,
-  // },
+  {
+    original: GalleryPhoto6,
+    thumbnail: GalleryPhoto6,
+  },
+  {
+    original: GalleryPhoto6,
+    thumbnail: GalleryPhoto6,
+  },
+  {
+    original: GalleryPhoto7,
+    thumbnail: GalleryPhoto7,
+  },
+  {
+    original: GalleryPhoto8,
+    thumbnail: GalleryPhoto8,
+  },
+  {
+    original: GalleryPhoto9,
+    thumbnail: GalleryPhoto9,
+  },
+  {
+    original: GalleryPhoto10,
+    thumbnail: GalleryPhoto10,
+  },
+  {
+    original: GalleryPhoto11,
+    thumbnail: GalleryPhoto11,
+  },
+  {
+    original: GalleryPhoto12,
+    thumbnail: GalleryPhoto12,
+  },
 ];
 
 const Gallery = () => {
